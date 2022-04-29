@@ -44,7 +44,7 @@ function createCar(make, model, cc, year) {
     car.year = year;
 
     car.isOn = function() {
-        return car.turnedOn
+        return car.turnedOn;
     }
 
     car.turnOn = function() {
@@ -65,3 +65,19 @@ function createCar(make, model, cc, year) {
 
     return car;
 }
+
+/**
+ * Create a Bicycle object with only the make [String] , model [String] and year [int] attributes and no
+ * methods. Instantiate it and print to the console its internal state calling the getMarketingData method
+ * from the Car object.
+ */
+function createBycicle(make, model, year) {
+    const bycicle = createCar(make, model, year);
+
+    return {
+        getMarketingData: bycicle.getMarketingData
+    };
+}
+
+const myBike = createBycicle();
+console.log(myBike.getMarketingData());
